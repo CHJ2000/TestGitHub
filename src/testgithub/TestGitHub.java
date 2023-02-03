@@ -9,10 +9,31 @@ package testgithub;
  * @author carte
  */
 public class TestGitHub {
-
+ private int day;
+ private String month;
+ private int year;
     
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
      
 }
+
+    /**
+     * @return the day
+     */
+    public int getDay() {
+        return day;
+    }
+
+    /**
+     * @return the month
+     */
+    public String getMonth() {
+        return month;
+    }
+
+    /**
+     * @return the year
+     */
+    public int getYear() {
+        return year;
+    }
