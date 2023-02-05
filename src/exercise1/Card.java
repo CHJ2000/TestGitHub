@@ -9,6 +9,7 @@ package exercise1;
  * add your name as a modifier.
  * @author dancye
  * @author Paul Bonenfant May 2020
+ * @author Carter Jeffery February 3rd 2023
  */
 public class Card {
 
@@ -43,4 +44,30 @@ public class Card {
     public void setValue(int value) {
         this.value = value;
     }  
+    
+//    /**
+//     *
+//     * @return
+//     */
+//    @Override
+//    public String toString(){
+//        String cardValue;
+//        switch(value){
+//            case 1:
+//                cardValue = "Ace";
+//                break;
+//            case 11:
+//                cardValue = "Jack";
+//                break;
+//            case 12: 
+//                cardValue = "Queen";
+//                break;
+//            case 13:
+//                cardValue = "King";
+//                break;
+//            default: 
+//                cardValue = Integer.toString(value);
+//        }
+//        return cardValue + " of " + suit;
+//    }
 } 

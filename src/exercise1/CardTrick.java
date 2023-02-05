@@ -15,29 +15,34 @@ public class CardTrick {
     public static void main(String[] args) {
         
         Card[] hand = new Card[7];
-
+        Random rand = new Random();
         for (int i = 0; i < hand.length; i++) {
             Card card = new Card();
-            Random rand = new Random();
-            card.setValue(rand.nextInt(14));
+            card.setValue(rand.nextInt(13)+ 1);
             card.setSuit(Card.SUITS[rand.nextInt(4)]);
-            // Hint: You can use Random -> random.nextInt(n) to get a random number between 0 and n-1 (inclusive)
-            //       Don't worry about duplicates at this point
+            hand[i] = card;
+        //System.out.println(card);
         }
 
         Scanner input = new Scanner(System.in);
-        //System.out.println("Pick a card any card! (A card value between 1 and 13 and a suit)");
-        
-        // insert code to ask the user for Card value and suit, create their card
-        // and search the hand here. 
-        // Hint: You can ask for values 1 to 10, and then
-        //       11 for jack, 12 for queen, etc. (remember arrays are 0-based though)
-        //       1 for Hearts, 2 for Diamonds, etc. (remember arrays are 0-based though)
-        // 
-        // Then loop through the cards in the array to see if there's a match.
-        
-        // If the guess is successful, invoke the printInfo() method below.
-        
+        System.out.print("Pick a card value(1-13): ");
+        int pickedValue = input.nextInt();
+        System.out.print("Pick a suit: ");
+        String pickedSuit = input.next();
+        Card picked = new Card();
+        picked.setValue(pickedValue);
+        picked.setSuit(pickedSuit);
+        boolean found = false;
+        for(int i = 0; i < hand.length; i++){
+            if((hand[i].getValue() == picked.getValue()) && hand[i].getSuit().equalsIgnoreCase(picked.getSuit())){
+               printInfo();
+                found = true;
+                break;
+            }
+        } 
+        if(!found){
+            System.out.println("Sorry! Card was not found in the random hand!");
+        }   
     }
 
     /**
